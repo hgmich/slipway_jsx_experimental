@@ -1,0 +1,30 @@
+{
+  "description": null,
+  "constants": null,
+  "rigging": {
+    "load": {
+      "component": "slipwayhq.fetch.0.0.1",
+      "allow": [
+        { "permission": "file", "within": "./jsx_samples" }
+      ],
+      "input": {
+        "text": {
+          "jsx": "file:./jsx_samples/image.jsx"
+        }
+      }
+    },
+    "output": {
+      "component": "file:src",
+      "input": {
+        "jsx": "$$.load.text.jsx.body",
+        "width": 400,
+        "height": 200
+      },
+      "allow": [
+        { "permission": "registry_component" },
+        { "permission": "font" },
+        { "permission": "http" }
+      ]
+    }
+  }
+}

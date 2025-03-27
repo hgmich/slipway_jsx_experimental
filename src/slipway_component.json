@@ -1,0 +1,66 @@
+{
+  "publisher": "slipwayhq",
+  "name": "jsx",
+  "description": "Takes an jsx string and returns a canvas.",
+  "version": "0.0.1",
+  "input": {
+    "properties": {
+      "width": { "type": "uint32" },
+      "height": { "type": "uint32" },
+      "jsx": { "type": "string"}
+    }
+  },
+  "output": {
+    "properties": {
+      "canvas": {
+        "properties": {
+          "width": {
+            "type": "uint32"
+          },
+          "height": {
+            "type": "uint32"
+          },
+          "data": {
+            "type": "string",
+            "metadata": {
+              "description": "Base64 encoded vector of RGBA unsigned bytes."
+            }
+          }
+        }
+      }
+    }
+  },
+  "rigging": {
+    "jsx_transpile": {
+      "component": "slipwayhq.jsx_transpile.0.0.1",
+      "input": {
+        "jsx": "$$.input.jsx"
+      }
+    },
+    "jsx_svg": {
+      "component": "slipwayhq.jsx_svg.0.0.1",
+      "allow": [
+        { "permission": "font" },
+        { "permission": "http" }
+      ],
+      "input": {
+        "width": "$$.input.width",
+        "height": "$$.input.height",
+        "jsx_js": "$$.jsx_transpile.js"
+      }
+    },
+    "output": {
+      "component": "slipwayhq.svg.0.0.1",
+      "allow": [
+        { "permission": "font" },
+        { "permission": "http" }
+      ],
+      "input": {
+        "width": "$$.input.width",
+        "height": "$$.input.height",
+        "svg": "$$.jsx_svg.svg",
+        "background": "white"
+      }
+    }
+  }
+}
