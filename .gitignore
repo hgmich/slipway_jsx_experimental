@@ -1,5 +1,7 @@
 /artifacts
 /components
+/fonts
+/output
 
 debug_rig.json
 .DS_Store

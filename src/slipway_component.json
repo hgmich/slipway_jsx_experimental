@@ -11,7 +11,7 @@
     },
     "optionalProperties": {
       "debug": { "type": "boolean" },
-      "default_font": { "type": "string" },
+      "fonts": { "elements": { "type": "string" }},
       "data": {},
       "embed_font": { "type": "boolean" }
     }
@@ -54,7 +54,7 @@
         "height": "$$.input.height",
         "jsx_js": "$$.jsx_transpile.js",
         "debug": "$$?input.debug",
-        "default_font": "$$?input.default_font",
+        "fonts": "$$?input.fonts",
         "data": "$$?input.data",
         "embed_font": "$$?input.embed_font"
       }

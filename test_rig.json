@@ -21,7 +21,9 @@
         "height": 200,
         "debug": false,
         "data": { "foo": "bar" },
-        "embed_font": false
+        "embed_font": true,
+        "fonts": [
+        ]
       },
       "allow": [
         { "permission": "registry_components" },
