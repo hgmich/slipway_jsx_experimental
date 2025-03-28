@@ -5,7 +5,7 @@
     "load": {
       "component": "slipwayhq.fetch.0.0.1",
       "allow": [
-        { "permission": "file", "within": "./jsx_samples" }
+        { "permission": "files", "within": "./jsx_samples" }
       ],
       "input": {
         "text": {
@@ -24,8 +24,8 @@
         "embed_font": false
       },
       "allow": [
-        { "permission": "registry_component" },
-        { "permission": "font" },
+        { "permission": "registry_components" },
+        { "permission": "fonts" },
         { "permission": "http" }
       ]
     }
