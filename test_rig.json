@@ -23,6 +23,7 @@
         "data": { "foo": "bar" },
         "embed_font": true,
         "fonts": [
+          "Doto"
         ]
       },
       "allow": [
