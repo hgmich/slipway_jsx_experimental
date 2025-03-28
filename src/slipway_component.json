@@ -8,6 +8,12 @@
       "width": { "type": "uint32" },
       "height": { "type": "uint32" },
       "jsx": { "type": "string"}
+    },
+    "optionalProperties": {
+      "debug": { "type": "boolean" },
+      "default_font": { "type": "string" },
+      "data": {},
+      "embed_font": { "type": "boolean" }
     }
   },
   "output": {
@@ -46,7 +52,11 @@
       "input": {
         "width": "$$.input.width",
         "height": "$$.input.height",
-        "jsx_js": "$$.jsx_transpile.js"
+        "jsx_js": "$$.jsx_transpile.js",
+        "debug": "$$?input.debug",
+        "default_font": "$$?input.default_font",
+        "data": "$$?input.data",
+        "embed_font": "$$?input.embed_font"
       }
     },
     "output": {

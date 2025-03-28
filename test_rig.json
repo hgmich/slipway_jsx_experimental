@@ -18,7 +18,10 @@
       "input": {
         "jsx": "$$.load.text.jsx.body",
         "width": 400,
-        "height": 200
+        "height": 200,
+        "debug": false,
+        "data": { "foo": "bar" },
+        "embed_font": false
       },
       "allow": [
         { "permission": "registry_component" },
