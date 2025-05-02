@@ -22,7 +22,7 @@ The rendering is performed using the [Satori library](https://github.com/vercel/
 
 ### `--allow-registry-components`
 
-This component is a Fragment Component that internally uses `slipwayhq.jsx_transpile` to transpile the JSX to JSON,
+This component is a Fragment Component that internally uses `slipwayhq.jsx_transpile` to transpile the JSX to Javascript,
 `slipwayhq.jsx_svg` to produce an SVG from the transpiled JSX,
 and `slipwayhq.svg` to render the SVG to [a canvas](https://slipway.co/docs/guides/canvases).
 
