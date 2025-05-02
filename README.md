@@ -3,12 +3,28 @@
 A [Slipway](https://slipway.co/) Component which takes a [JSX definition](https://og-playground.vercel.app/)
 as an input and returns a rendered [canvas](https://slipway.co/docs/guides/canvases).
 
+The rendering is performed using the [Satori library](https://github.com/vercel/satori).
+
+## Required Inputs
+
+- `width`: The width of the output.
+- `height`: The height of the output.
+- `jsx`: The JSX string.
+
+## Optional Inputs
+
+- `data`: Data which the JSX can bind to.
+- `fonts`: An array of fonts used by the JSX. If only one font is specified it will be used as the default font.
+- `debug`: Whether to draw bounding boxes to help with debugging.
+- `embed_font`: True if Satori should embed the fonts in the intermediate SVG as paths, or let the SVG renderer render the fonts.
+
 ## Suggested Permissions
 
 ### `--allow-registry-components`
 
-This component is a Fragment Component that internally uses `slipwayhq.jsx_svg` to produce
-an SVG from the JSX, and `slipwayhq.svg` to render the SVG to [a canvas](https://slipway.co/docs/guides/canvases).
+This component is a Fragment Component that internally uses `slipwayhq.jsx_transpile` to transpile the JSX to JSON,
+`slipwayhq.jsx_svg` to produce an SVG from the transpiled JSX,
+and `slipwayhq.svg` to render the SVG to [a canvas](https://slipway.co/docs/guides/canvases).
 
 ### `--allow-fonts`
 
@@ -30,7 +46,10 @@ Input:
 {
   "width": 400,
   "height": 300,
-  "jsx": "<div style={{height: '100%',width: '100%',display: 'flex',flexDirection: 'column',alignItems: 'center',justifyContent: 'center',backgroundColor: '#fff',fontSize: 32,fontWeight: 600}}><svg width=\"75\" viewBox=\"0 0 75 65\" fill=\"#000\" style={{ margin: '0 75px' }}><path d=\"M37.59.25l36.95 64H.64l36.95-64z\"></path></svg><div style={{ marginTop: 40 }}>Hello, World</div></div>"
+  "jsx": "<div style={{height: '100%',width: '100%',display: 'flex',flexDirection: 'column',alignItems: 'center',justifyContent: 'center',backgroundColor: '#fff',fontSize: 32,fontWeight: 600}}><svg width=\"75\" viewBox=\"0 0 75 65\" fill=\"#000\" style={{ margin: '0 75px' }}><path d=\"M37.59.25l36.95 64H.64l36.95-64z\"></path></svg><div style={{ marginTop: 40 }}>{data.text}</div></div>",
+  "data": {
+    "text": "Hello, World"
+  }
 }
 ```
 
