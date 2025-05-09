@@ -16,26 +16,7 @@
       "embed_font": { "type": "boolean" }
     }
   },
-  "output": {
-    "properties": {
-      "canvas": {
-        "properties": {
-          "width": {
-            "type": "uint32"
-          },
-          "height": {
-            "type": "uint32"
-          },
-          "data": {
-            "type": "string",
-            "metadata": {
-              "description": "Base64 encoded vector of RGBA unsigned bytes."
-            }
-          }
-        }
-      }
-    }
-  },
+  "output": "canvas",
   "rigging": {
     "jsx_transpile": {
       "component": "slipwayhq.jsx_transpile.0.5.1",
