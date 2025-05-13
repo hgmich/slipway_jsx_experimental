@@ -17,6 +17,7 @@ The rendering is performed using the [Satori library](https://github.com/vercel/
 - `fonts`: An array of fonts used by the JSX. If only one font is specified it will be used as the default font.
 - `debug`: Whether to draw bounding boxes to help with debugging.
 - `embed_font`: True if Satori should embed the fonts in the intermediate SVG as paths, or let the SVG renderer render the fonts.
+- `background_color`: The background color to set the canvas before the JSX is rendered, in hex format (e.g. `#ccccff`).
 
 ## Suggested Permissions
 
@@ -47,10 +48,11 @@ Input:
 {
   "width": 400,
   "height": 300,
+  "background_color": "#ccccff",
   "data": {
     "text": "Hello, World"
   },
-  "jsx": "<div style={{height: '100%',width: '100%',display: 'flex',flexDirection: 'column',alignItems: 'center',justifyContent: 'center',backgroundColor: '#fff',fontSize: 32,fontWeight: 600}}><svg width=\"75\" viewBox=\"0 0 75 65\" fill=\"#000\" style={{ margin: '0 75px' }}><path d=\"M37.59.25l36.95 64H.64l36.95-64z\"></path></svg><div style={{ marginTop: 40 }}>{data.text}</div></div>"
+  "jsx": "<div style={{height: '100%',width: '100%',display: 'flex',flexDirection: 'column',alignItems: 'center',justifyContent: 'center',fontSize: 32,fontWeight: 600}}><svg width=\"75\" viewBox=\"0 0 75 65\" fill=\"#000\" style={{ margin: '0 75px' }}><path d=\"M37.59.25l36.95 64H.64l36.95-64z\"></path></svg><div style={{ marginTop: 40 }}>{data.text}</div></div>"
 }
 ```
 

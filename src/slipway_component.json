@@ -13,7 +13,8 @@
       "debug": { "type": "boolean" },
       "fonts": { "elements": { "type": "string" }},
       "data": {},
-      "embed_font": { "type": "boolean" }
+      "embed_font": { "type": "boolean" },
+      "background_color": { "type": "string"}
     }
   },
   "output": "canvas",
@@ -41,7 +42,7 @@
       }
     },
     "output": {
-      "component": "slipwayhq.svg.0.5.0",
+      "component": "slipwayhq.svg.0.6.0",
       "allow": [
         { "permission": "fonts" },
         { "permission": "http" }
@@ -50,7 +51,7 @@
         "width": "$$.input.width",
         "height": "$$.input.height",
         "svg": "$$.jsx_svg.svg",
-        "background": "white"
+        "background_color": "$$?input.background_color"
       }
     }
   }
