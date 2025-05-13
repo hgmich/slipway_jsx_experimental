@@ -13,6 +13,7 @@ The rendering is performed using the [Satori library](https://github.com/vercel/
 
 ## Optional Inputs
 
+- `utils_js`: A string containing javascript that adds utility functions to the `utils` object in scope.
 - `data`: Data which the JSX can bind to.
 - `fonts`: An array of fonts used by the JSX. If only one font is specified it will be used as the default font.
 - `debug`: Whether to draw bounding boxes to help with debugging.
@@ -40,7 +41,7 @@ If the JSX contains images which need to be loaded from the internet, then HTTP 
 
 Test the component by running the following command and pasting in the input when prompted:
 ```
-slipway run-component "slipwayhq.jsx.0.5.2" --allow-fonts --allow-registry-components
+slipway run-component "slipwayhq.jsx.0.5.3" --allow-fonts --allow-registry-components
 ```
 
 Input:
@@ -52,7 +53,8 @@ Input:
   "data": {
     "text": "Hello, World"
   },
-  "jsx": "<div style={{height: '100%',width: '100%',display: 'flex',flexDirection: 'column',alignItems: 'center',justifyContent: 'center',fontSize: 32,fontWeight: 600}}><svg width=\"75\" viewBox=\"0 0 75 65\" fill=\"#000\" style={{ margin: '0 75px' }}><path d=\"M37.59.25l36.95 64H.64l36.95-64z\"></path></svg><div style={{ marginTop: 40 }}>{data.text}</div></div>"
+  "utils_js": "utils.getFill = () => { return \"#00f\"; }",
+  "jsx": "<div style={{height: '100%',width: '100%',display: 'flex',flexDirection: 'column',alignItems: 'center',justifyContent: 'center',fontSize: 32,fontWeight: 600}}><svg width=\"75\" viewBox=\"0 0 75 65\" fill={utils.getFill()} style={{ margin: '0 75px' }}><path d=\"M37.59.25l36.95 64H.64l36.95-64z\"></path></svg><div style={{ marginTop: 40 }}>{data.text}</div></div>"
 }
 ```
 
@@ -66,3 +68,5 @@ Output:
   }
 }
 ```
+
+![Example Output](example-output.png)

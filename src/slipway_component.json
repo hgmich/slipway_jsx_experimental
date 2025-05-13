@@ -10,6 +10,7 @@
       "jsx": { "type": "string"}
     },
     "optionalProperties": {
+      "utils_js": { "type": "string" },
       "debug": { "type": "boolean" },
       "fonts": { "elements": { "type": "string" }},
       "data": {},
@@ -26,7 +27,7 @@
       }
     },
     "jsx_svg": {
-      "component": "slipwayhq.jsx_svg.0.5.0",
+      "component": "slipwayhq.jsx_svg.0.5.1",
       "allow": [
         { "permission": "fonts" },
         { "permission": "http" }
@@ -35,6 +36,7 @@
         "width": "$$.input.width",
         "height": "$$.input.height",
         "jsx_js": "$$.jsx_transpile.js",
+        "utils_js": "$$?input.utils_js",
         "debug": "$$?input.debug",
         "fonts": "$$?input.fonts",
         "data": "$$?input.data",
