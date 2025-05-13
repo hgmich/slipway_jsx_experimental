@@ -40,7 +40,7 @@ If the JSX contains images which need to be loaded from the internet, then HTTP 
 
 Test the component by running the following command and pasting in the input when prompted:
 ```
-slipway run-component "slipwayhq.jsx.0.5.1" --allow-fonts --allow-registry-components
+slipway run-component "slipwayhq.jsx.0.5.2" --allow-fonts --allow-registry-components
 ```
 
 Input:
