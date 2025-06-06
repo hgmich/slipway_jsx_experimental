@@ -1,1 +1,1 @@
-slipway run test_rig.json --allow-all --log-level debug --registry "file:../slipway_{name}/components/{publisher}.{name}.{version}.tar" --fonts ./fonts
+slipway run test_rig.json --allow-all --log-level debug --registry "file:components/{publisher}.{name}" --registry "file:../slipway_{name}/components/{publisher}.{name}.{version}.tar" --fonts ./fonts

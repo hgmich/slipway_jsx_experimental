@@ -1,0 +1,25 @@
+{
+  "publisher": "slipwayhq",
+  "name": "jsx__svg",
+  "version": "0.0.1",
+  "description": "Converts JS transpiled JSX to SVG.",
+  "input": {
+    "properties": {
+      "jsx_js": { "type": "string" },
+      "width": { "type": "uint32" },
+      "height": { "type": "uint32" }
+    },
+    "optionalProperties": {
+      "utils_js": { "type": "string" },
+      "debug": { "type": "boolean" },
+      "fonts": { "elements": { "type": "string" }},
+      "data": {},
+      "embed_font": { "type": "boolean" }
+    }
+  },
+  "output": {
+    "properties": {
+      "svg": { "type": "string" }
+    }
+  }
+}

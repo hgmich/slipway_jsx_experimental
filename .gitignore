@@ -1,7 +1,9 @@
 /artifacts
-/components
+/components/*.tar
+/components/**/*.wasm
 /fonts
 /output
+/target
 
 debug_rig.json
 .DS_Store

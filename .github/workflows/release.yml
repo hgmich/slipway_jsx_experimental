@@ -32,8 +32,7 @@ jobs:
     - prerelease
 
     steps:
-      - name: Install just
-        run: cargo install just
+      - uses: extractions/setup-just@v3
 
       - name: Check out code
         uses: actions/checkout@v4
@@ -43,7 +42,11 @@ jobs:
 
       - name: Patch version field in JSON
         run: |
-          jq --arg v "$VERSION" '.version = $v' src/slipway_component.json > tmp && mv tmp src/slipway_component.json
+          find components -type f -name slipway_component.json | while read -r file; do
+            jq --arg v "$VERSION" '.version = $v' "$file" > tmp && mv tmp "$file"
+          done
+          sed -r -i "s|slipwayhq\.jsx__svg\.[0-9]+\.[0-9]+\.[0-9]+|slipwayhq.jsx__svg.${VERSION}|g" components/slipwayhq.jsx/slipway_component.json
+          sed -r -i "s|slipwayhq\.jsx__transpile\.[0-9]+\.[0-9]+\.[0-9]+|slipwayhq.jsx__transpile.${VERSION}|g" components/slipwayhq.jsx/slipway_component.json
 
       - name: Build release tarball
         run: just build-ci

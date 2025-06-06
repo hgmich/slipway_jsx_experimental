@@ -20,14 +20,14 @@
   },
   "output": "canvas",
   "rigging": {
-    "jsx_transpile": {
-      "component": "slipwayhq.jsx_transpile.0.5.1",
+    "jsx__transpile": {
+      "component": "slipwayhq.jsx__transpile.0.5.4",
       "input": {
         "jsx": "$$.input.jsx"
       }
     },
-    "jsx_svg": {
-      "component": "slipwayhq.jsx_svg.0.5.1",
+    "jsx__svg": {
+      "component": "slipwayhq.jsx__svg.0.5.4",
       "allow": [
         { "permission": "fonts" },
         { "permission": "http" }
@@ -35,7 +35,7 @@
       "input": {
         "width": "$$.input.width",
         "height": "$$.input.height",
-        "jsx_js": "$$.jsx_transpile.js",
+        "jsx_js": "$$.jsx__transpile.js",
         "utils_js": "$$?input.utils_js",
         "debug": "$$?input.debug",
         "fonts": "$$?input.fonts",
@@ -44,7 +44,7 @@
       }
     },
     "output": {
-      "component": "slipwayhq.svg.0.6.0",
+      "component": "slipwayhq.svg.0.6.1",
       "allow": [
         { "permission": "fonts" },
         { "permission": "http" }
@@ -52,7 +52,7 @@
       "input": {
         "width": "$$.input.width",
         "height": "$$.input.height",
-        "svg": "$$.jsx_svg.svg",
+        "svg": "$$.jsx__svg.svg",
         "background_color": "$$?input.background_color"
       }
     }
