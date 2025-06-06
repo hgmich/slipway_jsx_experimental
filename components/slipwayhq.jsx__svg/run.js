@@ -29,7 +29,7 @@ export async function run(input) {
     }
   }
   else {
-    await try_add_font(fonts, input.default_font || "\"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif");
+    await try_add_font(fonts, input.default_font || "sans-serif");
   }
 
   const svg = await satori(
