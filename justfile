@@ -1,7 +1,7 @@
 publisher := "slipwayhq"
 
-build: clean wit && (package "jsx") (package "jsx__svg") cargo-build (assemble "jsx__transpile") (package "jsx__transpile")
-build-ci: clean && (package-ci "jsx") (package-ci "jsx__svg") cargo-build (assemble "jsx__transpile") (package-ci "jsx__transpile")
+build: clean wit && (package "jsx") (package "jsx__svg") cargo-build (assemble "jsx_transpile" "jsx__transpile") (package "jsx__transpile")
+build-ci: clean && (package-ci "jsx") (package-ci "jsx__svg") cargo-build (assemble "jsx_transpile" "jsx__transpile") (package-ci "jsx__transpile")
   rustup target add wasm32-wasip2
 
 clean:
@@ -17,8 +17,8 @@ package-ci name:
 cargo-build configuration="release":
   cd src && cargo build --target wasm32-wasip2 {{ if configuration == "release" { "--release" } else { "" } }}
 
-assemble name configuration="release":
-  cp target/wasm32-wasip2/{{configuration}}/slipway_{{name}}.wasm components/{{publisher}}.{{name}}/run.wasm
+assemble rustname name configuration="release":
+  cp target/wasm32-wasip2/{{configuration}}/slipway_{{rustname}}.wasm components/{{publisher}}.{{name}}/run.wasm
 
 wit:
   slipway wit > wit/slipway.wit
