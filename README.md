@@ -41,7 +41,7 @@ If the JSX contains images which need to be loaded from the internet, then HTTP 
 
 Test the component by running the following command and pasting in the input when prompted:
 ```
-slipway run-component "slipwayhq.jsx.0.5.4" --allow-fonts --allow-registry-components
+slipway run-component "slipwayhq.jsx.0.6.0" --allow-fonts --allow-registry-components
 ```
 
 Input:
@@ -110,7 +110,7 @@ If the JSX contains images which need to be loaded from the internet, then HTTP 
 
 Test the component by running the following command and pasting in the input when prompted:
 ```
-slipway run-component "slipwayhq.jsx__svg.0.5.4" --allow-fonts
+slipway run-component "slipwayhq.jsx__svg.0.6.0" --allow-fonts
 ```
 
 Input:
@@ -185,7 +185,7 @@ None.
 
 Test the component by running the following command and pasting in the input when prompted:
 ```
-slipway run-component "slipwayhq.jsx__transpile.0.5.4"
+slipway run-component "slipwayhq.jsx__transpile.0.6.0"
 ```
 
 Input:
