@@ -14,5 +14,5 @@
   }}
 >
   <img src="https://picsum.photos/150/100" width={150} height={100} />
-  <b style={{ fontFamily: 'Doto', fontSize: '24px' }}>Images</b>
+  <b style={{ fontFamily: 'sans-serif', fontSize: '24px' }}>Images</b>
 </div>

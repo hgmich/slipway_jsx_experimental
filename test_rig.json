@@ -3,7 +3,7 @@
   "constants": null,
   "rigging": {
     "load": {
-      "component": "slipwayhq.fetch.0.0.1",
+      "component": "slipwayhq.fetch.0.5.0",
       "allow": [
         { "permission": "files", "within": "./jsx_samples" }
       ],
@@ -14,17 +14,14 @@
       }
     },
     "output": {
-      "component": "file:src",
+      "component": "file:components/slipwayhq.jsx",
       "input": {
         "jsx": "$$.load.text.jsx.body",
         "width": 400,
         "height": 200,
         "debug": false,
         "data": { "foo": "bar" },
-        "embed_font": true,
-        "fonts": [
-          "Doto"
-        ]
+        "embed_font": true
       },
       "allow": [
         { "permission": "registry_components" },
