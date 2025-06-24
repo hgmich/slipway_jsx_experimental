@@ -1,6 +1,6 @@
 {
-  "publisher": "slipwayhq",
-  "name": "jsx__svg",
+  "publisher": "hgmich",
+  "name": "jsx_experimental__svg",
   "version": "0.0.1",
   "description": "Converts JS transpiled JSX to SVG.",
   "input": {
@@ -12,7 +12,7 @@
     "optionalProperties": {
       "utils_js": { "type": "string" },
       "debug": { "type": "boolean" },
-      "fonts": { "elements": { "type": "string" }},
+      "fonts": { "elements": { "type": "string" } },
       "data": {},
       "embed_font": { "type": "boolean" }
     }

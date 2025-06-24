@@ -1,6 +1,6 @@
 {
-  "publisher": "slipwayhq",
-  "name": "jsx__transpile",
+  "publisher": "hgmich",
+  "name": "jsx_expermimental__transpile",
   "description": "Transforms JSX strings to JS strings.",
   "version": "0.0.1",
   "input": {

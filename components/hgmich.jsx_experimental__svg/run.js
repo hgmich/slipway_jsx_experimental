@@ -1,4 +1,4 @@
-import satori, { React } from 'satori.js' // React is required by the `eval` below.
+import satori, { React } from "satori.js"; // React is required by the `eval` below.
 
 export async function run(input) {
   // This allows the JSX to bind to `data.*`.
@@ -10,12 +10,25 @@ export async function run(input) {
     console.debug("Evaluating utils_js...");
     eval(utils_js);
     console.debug("...done.");
-    console.debug("Object utils contains the following keys: " + Object.keys(utils));
+    console.debug(
+      "Object utils contains the following keys: " + Object.keys(utils),
+    );
   }
 
   let jsx_js = input.jsx_js;
+  console.debug("input jsx:", jsx_js);
   console.debug("Evaluating jsx_js...");
+  jsx_js = `
+    try {
+      ${jsx_js}
+    } catch (e) {
+      console.dir(e);
+      console.error("Failed to evaluate jsx:", e.message, e.stack);
+      throw e;
+    }
+  `;
   let converted_jsx = eval(jsx_js);
+  console.debug(converted_jsx);
   console.debug("...done.");
 
   let fonts = [];
@@ -27,32 +40,28 @@ export async function run(input) {
       }
       await try_add_font(fonts, font);
     }
-  }
-  else {
+  } else {
     await try_add_font(fonts, input.default_font || "sans-serif");
   }
 
-  const svg = await satori(
-    converted_jsx,
-    {
-      width: input.width,
-      height: input.height,
-      embedFont: input.embed_font ?? true,
-      debug: input.debug,
-      fonts,
-      loadAdditionalAsset: async (code, segment) => {
-        console.log("Load additional asset requested: " + code);
-        if (code === 'emoji') {
-          return undefined;
-        }
-  
-        let font = await slipway_host.font(code);
-        if (font && font.data) {
-          return font.data.buffer;
-        }
+  const svg = await satori(converted_jsx, {
+    width: input.width,
+    height: input.height,
+    embedFont: input.embed_font ?? true,
+    debug: input.debug,
+    fonts,
+    loadAdditionalAsset: async (code, segment) => {
+      console.log("Load additional asset requested: " + code);
+      if (code === "emoji") {
+        return undefined;
+      }
+
+      let font = await slipway_host.font(code);
+      if (font && font.data) {
+        return font.data.buffer;
       }
     },
-  );
+  });
 
   return {
     svg: svg,
@@ -70,7 +79,7 @@ async function try_add_font(fonts, query) {
       name: font_result.family,
       data: font_result.data.buffer,
       weight: 400,
-      style: 'normal',
-    })
+      style: "normal",
+    });
   }
 }

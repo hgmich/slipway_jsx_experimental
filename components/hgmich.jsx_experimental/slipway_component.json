@@ -1,37 +1,40 @@
 {
-  "publisher": "slipwayhq",
-  "name": "jsx",
+  "publisher": "hgmich",
+  "name": "jsx_experimental",
   "description": "Takes an jsx string and returns a canvas.",
   "version": "0.0.1",
   "input": {
     "properties": {
       "width": { "type": "uint32" },
       "height": { "type": "uint32" },
-      "jsx": { "type": "string"}
+      "jsx": { "type": "string" }
     },
     "optionalProperties": {
       "utils_js": { "type": "string" },
       "debug": { "type": "boolean" },
-      "fonts": { "elements": { "type": "string" }},
+      "fonts": { "elements": { "type": "string" } },
       "data": {},
       "embed_font": { "type": "boolean" },
-      "background_color": { "type": "string"}
+      "background_color": { "type": "string" },
+      "disable_smoothing": {
+        "type": "boolean",
+        "metadata": {
+          "description": "Whether or not to disable antialiasing of shape edges (helps with display on E-Paper displays)"
+        }
+      }
     }
   },
   "output": "canvas",
   "rigging": {
     "jsx__transpile": {
-      "component": "slipwayhq.jsx__transpile.0.5.4",
+      "component": "hgmich.jsx_experimental__transpile.0.6.0-pre1",
       "input": {
         "jsx": "$$.input.jsx"
       }
     },
     "jsx__svg": {
-      "component": "slipwayhq.jsx__svg.0.5.4",
-      "allow": [
-        { "permission": "fonts" },
-        { "permission": "http" }
-      ],
+      "component": "hgmich.jsx_experimental__svg.0.6.0-pre1",
+      "allow": [{ "permission": "fonts" }, { "permission": "http" }],
       "input": {
         "width": "$$.input.width",
         "height": "$$.input.height",
@@ -44,16 +47,14 @@
       }
     },
     "output": {
-      "component": "slipwayhq.svg.0.6.2",
-      "allow": [
-        { "permission": "fonts" },
-        { "permission": "http" }
-      ],
+      "component": "hgmich.svg_experimental.0.7.0-pre1",
+      "allow": [{ "permission": "fonts" }, { "permission": "http" }],
       "input": {
         "width": "$$.input.width",
         "height": "$$.input.height",
         "svg": "$$.jsx__svg.svg",
-        "background_color": "$$?input.background_color"
+        "background_color": "$$?input.background_color",
+        "disable_smoothing": "$$?input.disable_smoothing"
       }
     }
   }

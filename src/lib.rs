@@ -106,4 +106,14 @@ mod tests {
             r#"React.createElement("h1", null, "Hello World!");"#
         );
     }
+
+    #[test]
+    fn it_should_convert_jsx_in_callbacks() {
+        let jsx = r#"<div>{[1,2,3].map((n) => <p>{n}</p>)}</div>"#;
+        let js = jsx_to_js(jsx).unwrap();
+        assert_eq!(
+            js.trim(),
+            r#"React.createElement("h1", null, "Hello World!");"#
+        );
+    }
 }
