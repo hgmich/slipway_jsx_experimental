@@ -27,13 +27,13 @@
   "output": "canvas",
   "rigging": {
     "jsx__transpile": {
-      "component": "hgmich.jsx_experimental__transpile.0.6.0-pre1",
+      "component": "hgmich.jsx_experimental__transpile.0.6.0-pre.1",
       "input": {
         "jsx": "$$.input.jsx"
       }
     },
     "jsx__svg": {
-      "component": "hgmich.jsx_experimental__svg.0.6.0-pre1",
+      "component": "hgmich.jsx_experimental__svg.0.6.0-pre.1",
       "allow": [{ "permission": "fonts" }, { "permission": "http" }],
       "input": {
         "width": "$$.input.width",
@@ -47,7 +47,7 @@
       }
     },
     "output": {
-      "component": "hgmich.svg_experimental.0.7.0-pre1",
+      "component": "hgmich.svg_experimental.0.7.0-pre.1",
       "allow": [{ "permission": "fonts" }, { "permission": "http" }],
       "input": {
         "width": "$$.input.width",
