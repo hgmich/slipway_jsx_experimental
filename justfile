@@ -1,12 +1,12 @@
-publisher := "slipwayhq"
+publisher := "hgmich"
 
-build: clean wit && (package "jsx") (package "jsx__svg") cargo-build (assemble "jsx_transpile" "jsx__transpile") (package "jsx__transpile")
-build-ci: clean && (package-ci "jsx") (package-ci "jsx__svg") cargo-build (assemble "jsx_transpile" "jsx__transpile") (package-ci "jsx__transpile")
+build: clean wit && (package "jsx_experimental") (package "jsx_experimental__svg") cargo-build (assemble "jsx_experimental_transpile" "jsx_experimental__transpile") (package "jsx_experimental__transpile")
+build-ci: clean && (package-ci "jsx_experimental") (package-ci "jsx_experimental__svg") cargo-build (assemble "jsx_experimental_transpile" "jsx_experimental__transpile") (package-ci "jsx_experimental__transpile")
   rustup target add wasm32-wasip2
 
 clean:
   rm -f components/*.tar
-  rm -f components/{{publisher}}.jsx__transpile/run.wasm
+  rm -f components/{{publisher}}.jsx_experimental__transpile/run.wasm
 
 package name:
   slipway package components/{{publisher}}.{{name}}
